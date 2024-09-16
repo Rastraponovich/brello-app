@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "prepare": "husky || true",
     "lint-staged": "lint-staged",
-    "build": "tsc -b && vite build"
+    "build": "tsc -b && vite build",
+    "format:check": "prettier --check '.'",
+    "check": "pnpm run lint && pnpm run format:check"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
