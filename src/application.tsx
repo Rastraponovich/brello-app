@@ -3,6 +3,7 @@ import { useUnit } from "effector-react";
 
 import styles from "./application.module.css";
 import reactLogo from "./assets/react.svg";
+import { Header } from "./header";
 import viteLogo from "/vite.svg";
 
 const increment = createEvent();
@@ -13,30 +14,34 @@ export function Application() {
   const [count, setCount] = useUnit([counter, increment]);
 
   return (
-    <main className={styles.main}>
-      <div className={styles.logoContainer}>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className={styles.logo} alt="Vite logo" />
-        </a>
+    <>
+      <Header />
 
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className={styles.logo} alt="React logo" />
-        </a>
-      </div>
+      <main className={styles.main}>
+        <div className={styles.logoContainer}>
+          <a href="https://vitejs.dev" target="_blank">
+            <img src={viteLogo} className={styles.logo} alt="Vite logo" />
+          </a>
 
-      <h1>Vite + React</h1>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className={styles.logo} alt="React logo" />
+          </a>
+        </div>
 
-      <div className="card">
-        <button type="button" onClick={setCount}>
-          count is {count}
-        </button>
+        <h1>Vite + React</h1>
 
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
+        <div className="card">
+          <button type="button" onClick={setCount}>
+            count is {count}
+          </button>
 
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </main>
+          <p>
+            Edit <code>src/App.tsx</code> and save to test HMR
+          </p>
+        </div>
+
+        <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      </main>
+    </>
   );
 }
