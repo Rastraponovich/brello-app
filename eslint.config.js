@@ -1,5 +1,4 @@
 import js from "@eslint/js";
-import effector from "eslint-plugin-effector";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
@@ -29,7 +28,6 @@ export default tseslint.config(
 
     plugins: {
       react,
-      effector: effector,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
     },
@@ -37,11 +35,6 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
-
-      ...effector.configs.recommended.rules,
-      ...effector.configs.react.rules,
-      ...effector.configs.patronum.rules,
-      ...effector.configs.scope.rules,
 
       "react/forbid-prop-types": 2,
       "react/no-array-index-key": 1,
